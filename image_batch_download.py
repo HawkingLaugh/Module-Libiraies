@@ -1,16 +1,22 @@
 from read_the_maxfilename_for_sort import max_number
 import requests
 
-i = 1
-temp_number = max_number()
-
-def download(url):
-    global i
-    global temp_number
-    print('Processing {0} url:{1}'.format(i,url))
-    img = open('{}.jpg'.format(temp_number),'wb')
+def download(url, name):
+    # get url and name to download.
+    print('Processing {0} url:{1}'.format(name,url))
+    img = open('{}'.format(name),'wb')
     respone = requests.get(url, stream=True).content
     img.write(respone)
-    i += 1
-    temp_number += 1
     img.close()
+
+def downloads(urls):
+    file_num = len(urls)
+    file_name = reversed(file_num)
+
+    for i in file_num:
+        url = urls[i]
+        print('Processing {0} url:{1}'.format(file_name[i],url))
+        img = open('{}'.format(file_name[i]),'wb')
+        respone = requests.get(url, stream=True).content
+        img.write(respone)
+        img.close()
