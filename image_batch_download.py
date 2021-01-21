@@ -10,13 +10,14 @@ def download(url, name):
     img.close()
 
 def downloads(urls):
-    file_num = len(urls)
+    # create list from range and len of the list
+    file_num = [*range(len(urls))]
     file_name = reversed(file_num)
 
     for i in file_num:
         url = urls[i]
         print('Processing {0} url:{1}'.format(file_name[i],url))
-        img = open('{}'.format(file_name[i]),'wb')
+        img = open('Download/{}'.format(file_name[i]),'wb')
         respone = requests.get(url, stream=True).content
         img.write(respone)
         img.close()
