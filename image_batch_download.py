@@ -17,7 +17,7 @@ def downloads(urls):
     for i in file_num:
         url = urls[i]
         print('Processing {0} url:{1}'.format(file_name[i],url))
-        img = open('Download/{}'.format(file_name[i]),'wb')
+        img = open('Download/{}.jpg'.format(file_name[i]),'wb')
         respone = requests.get(url, stream=True).content
         img.write(respone)
         img.close()
