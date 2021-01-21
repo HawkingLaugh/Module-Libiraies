@@ -12,7 +12,7 @@ def download(url, name):
 def downloads(urls):
     # create list from range and len of the list
     file_num = [*range(len(urls))]
-    file_name = reversed(file_num)
+    file_name = [*reversed(file_num)]
 
     for i in file_num:
         url = urls[i]
