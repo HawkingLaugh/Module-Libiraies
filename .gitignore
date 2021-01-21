@@ -1,3 +1,6 @@
 .vscode/
 *.todo
 *.txt
+SNEXT_files/
+*.html
+__pycache__/
