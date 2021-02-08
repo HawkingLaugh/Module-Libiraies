@@ -4,3 +4,4 @@
 SNEXT_files/
 *.html
 __pycache__/
+.env
